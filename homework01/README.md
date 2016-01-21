@@ -10,3 +10,4 @@ Exercise 01: Paths
 
 3. cd ~csesoft
 
+4. 
