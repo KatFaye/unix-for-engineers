@@ -1,9 +1,9 @@
 Reading 03
 ==========
 
-1.
+1. less \bin\ls
 
-2.
+2. ldd ls
 
 3. strace -e trace=open ls
 
