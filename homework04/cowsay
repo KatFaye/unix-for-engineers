@@ -16,7 +16,7 @@ $version = "3.03";
 $progname = basename($0);
 $eyes = "oo";
 $tongue = "  ";
-$cowpath = $ENV{'COWPATH'} || '/afs/nd.edu/user15/pbui/pub/share/cows';
+$cowpath = $ENV{'COWPATH'} || '.';
 @message = ();
 $thoughts = "";
 

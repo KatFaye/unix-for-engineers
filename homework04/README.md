@@ -24,3 +24,15 @@ c) Directory arguments were processed within a while loop that continued until a
 d) The command line argument for the -n flag was stored in the variable 'NOPT' using the 'OPTARG' variable with getopts. If no value was provided but the -n flag was included, it default to 'n'. This was then incorporated into the flags for the head command by accessing the variable.
 
 2. The hardest part of the script was testing if no arguments had been entered, since my initial method of checking for that without the use of $# failed "test_disk_usage.sh". The longest part of the code was simply checking for valid inputs before performing the needed commands for display. This was not surprising, since error checking needs to be thorough in order to account for all possible outcomes.
+
+**Activity 03: taunt.sh**
+
+1. a) All signals were handled using a trap statement. If the '1' signal was detected, a different message was displayed that if the '2' or '15' signals were detected.
+
+b) I passed long messages to ./cowsay using the pipe ( | ) command. In particular, the default message was a fortune (included in the directory) of varying length- some of them are much longer than others.
+
+c) I handled the timeout with a while loop lasting ten seconds (using the date function to calculat how much time had passed) with a sleep statement within the function. After the while loop ended, a unique parting message was displayed before the program exited.
+
+2. Writing C programs are easier, since the syntax is much more forgiving with blank spaces. However, shell scripts are more useful for using built-in utilities and commands from the terminal, and are more efficient at automating tasks accessed from the command line. In most other cases- for example, simply getting the date or performing basic calculations- a C program would be preferable and more flexible.
+
+
