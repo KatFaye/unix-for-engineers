@@ -1,0 +1,77 @@
+\documentclass[letterpaper]{article}
+
+\title{Reading 08: Dice Experiment Report}
+\date{3/14/2016}
+\author{Kat Herring}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\maketitle
+
+This document provides a summary of my work for Reading 08.
+
+\section{Overview}
+
+For this assignment, two shell scripts were used to simulate rolling a dice 1,000 times. The results were then compiled and displayed in both tabular and graphical forms using Gnuplot.
+
+\section{Rolling Dice}
+
+The rolling-dice script, roll\_dice.sh, was implemented using a case statement to check for inputted options, followed by a for loop which contained a shuf command that ran the the specified number of times given the usage below.
+
+\begin{verbatim}
+	#!/bin/sh
+
+	usage: roll_dice.sh [-r ROLLS -s sides]
+
+	    -r ROLLS        Number of rolls of die (default: 10)
+	    -s SIDES        Number of sides on die (default: 6)
+\end{verbatim}
+
+\section{Experiment}
+
+The experiment script, experiment.sh, was implemented by first running the roll\_dice script with a specified roll number of 1000, then piping the results into a awk script that aggregated the ouput of dice roll into the file results.dat.
+
+\begin{verbatim}
+	#!/bin/sh
+	# simulates 1000 dice rolls and aggregates output using awk
+	#Author: Kat Herring
+
+	./roll_dice.sh -r 1000 | awk -v OFS="\t" '{ results[$1]++ } END { 
+		for(i=1; i<=6; i++)
+			print(i, results[i])
+	}' > results.dat
+\end{verbatim}
+
+\section{Results}
+
+The results of the experiment are displayed below, in Table \ref{tbl:results} and Figure \ref{fig:experimentResults}.
+
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{r||c}
+    Roll	& Times Rolled\\
+    \hline
+    1	& 173\\
+    2	& 164\\
+    3	& 179\\
+    4	& 161 \\
+	5 & 156\\
+	6 & 167\\
+    \end{tabular}
+    \caption{Results of 1000-roll Experiment}
+    \label{tbl:results}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=5in]{results.png}
+\caption{Histogram of experiment results}
+\label{fig:experimentResults}
+\end{figure}
+
+\end{document}
