@@ -1,0 +1,80 @@
+\documentclass[letterpaper]{article}
+
+\title{Homework 06: Diversity in Computer Science}
+\date{3/21/2016}
+\author{Kat Herring \\ kherring@nd.edu}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\maketitle
+
+This document provides a summary of gender and racial diversity in Computer Science.
+
+\section{Overview}
+
+Using shell scripts and gnuplot, I found that Notre Dame's Computer Science department is more demographically diverse than the tech industry as a whole. However, Caucasians and males are still disproportionately over-represented in the deparment.
+
+\section{Methodology}
+
+In order to process the provided data, I wrote a shell script that used awk in order to create a series of associative arrays of the racial and gender demographics at Notre Dame. The totals are then printed and saved into the file demographics.dat.
+
+Demographics.dat is then split into two files, gender.dat and race.dat, which contain the corresponding statistical information.
+
+One of the biggest challenges was in using awk to parse the data in the format that I wanted, as associative arrays are still fairly new to me.
+
+\section{Analysis}
+
+The demographic statistics for gender in the Notre Dame Computer Science department are displayed in Figure \ref{fig:gender}.
+
+Overall, the data depicts a dramatic increase in the size of the Computer Science department as a whole, with the gender balance increasing slightly during the past five years. \ref{tbl:results}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5in]{gender.png}
+\caption{Histogram of Gender Diversity}
+\label{fig:gender}
+\end{figure}
+
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{r||c}
+    Year	& Percentage of Female Students\\
+    \hline
+    2013	& 22\% \\
+    2014	& 21\% \\
+    2015	& 21\% \\
+    2016	& 24\% \\
+    2017 & 28\% \\
+    2018 & 28\% \\
+    \end{tabular}
+    \caption{Gender balance in CSE over past five years}
+    \label{tbl:results}
+\end{table}
+
+The demographic statistics for race in the Notre Dame Computer Science department are displayed in Figure \ref{fig:race}. While the specific breakdown of minorities varies slightly from year to year, the department as a whole as in face gotten less racially diverse and the percentage of students that are Caucasian.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=5in]{race.png}
+\caption{Histogram of Racial Diversity}
+\label{fig:race}
+\end{figure}
+
+
+
+
+\section{Discussion}
+
+Gender and ethnic diversity is important. While not the only factors in a person's outlook, race and gender tend to have a significant impact on a individual perspectives. Through an increase in diversity, a broader sprectrum of viewpoints often becomes available. This can help ensure that technology reflects the needs of society as a whole, rather than a specific, narrow subset.
+
+In my experiences thus far, I have not had any problems with the department at Notre Dame, although I rejected few of the tech clubs I considered joining my Freshman year due to the fact that I was one of only two or three women present at the first meetings. Likewise, I did not have much interest in becoming active in SWE, which is near-exclusively female.
+
+Overall, though it's not perfect, I'm satisfied with Notre Dame's approach to gender and racial imbalances within the engineering school.
+
+\end{document}
+
