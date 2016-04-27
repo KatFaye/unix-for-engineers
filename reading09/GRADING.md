@@ -1,11 +1,12 @@
 Reading 9 - Grading
 ====================
 
-**Score**: 2 / 4
+**Score**: 2.75 / 4
 
 Deductions
 ----------
--2 	each test had most tests fail
+-1 	each uniq and wc test had most tests fail
+-0.25 	cut some tests failed
 
 Comments
 --------
