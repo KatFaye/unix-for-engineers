@@ -52,7 +52,7 @@ try:
 	result = sock.connect_ex((IP, port))
         if result == 0:
             print "Port {}: 	 Open".format(port)
-	sock.settimeout(2.0)
+	    print sock.recv(port)
         sock.close()
 
 except socket.gaierror:
